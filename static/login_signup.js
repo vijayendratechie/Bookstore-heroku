@@ -75,7 +75,7 @@ $(document).ready(function()
 			    },
 			    error: function(XMLHttpRequest, textStatus, errorThrown)
 			    {
-					console.log("Error in signup");	    	
+					console.log("Error in signup : "+errorThrown);	    	
 			    }
 		    });	
 		}
@@ -127,7 +127,7 @@ $(document).ready(function()
 			    },
 			    error: function(XMLHttpRequest, textStatus, errorThrown)
 			    {
-			    	
+			    	console.log("Error in login : "+errorThrown);	
 			    }
 		    });	
 		}	

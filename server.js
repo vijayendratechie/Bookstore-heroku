@@ -517,7 +517,7 @@ function sendemailtoseller(bookowneremail,bookownername,res,bookname,buyerinfo)
 		  to: bookowneremail,
 		  subject: bookname+' has got an interested buyer',
 		  //html : '<a href="https://discountedtrade.herokuapp.com/confirmemail?email='+email+'" return false;>Click me</a>'
-		  html : '<div>Hi '+bookownername+',</div><p> Your book <b>'+bookname+'</b> has got an interested buyer. Please contact the buyer'+buyerinfo.name+' at '+buyerinfo.email+' for further action</p>'
+		  html : '<div>Hi '+bookownername+',</div><p> Your book <b>'+bookname+'</b> has got an interested buyer. Please contact the buyer '+buyerinfo.name+' at '+buyerinfo.email+' for further action</p>'
 		};	
 	}		
 	
