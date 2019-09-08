@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="utf-8">
+    <meta http-equiv="expires" content="0">
+
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>	  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="home_style.css"></a>	  
+    <script type="text/javascript" src="home.js"></script>
+    <!--<script type="text/javascript" src="login_signup.js"></script>-->    
+    	   
+</head>
+<body>
+
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <div class="navbar-brand">Discounted Trade</div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://discountedtrade.herokuapp.com/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://discountedtrade.herokuapp.com/myadds">My Adds</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://discountedtrade.herokuapp.com/mypurchase">My Purchase</a>
+            	<span class="sr-only">(current)</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://discountedtrade.herokuapp.com/logout">Logout</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="" data-toggle="modal" data-target="#contactModal" id="contactbtn">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+  <div class="row" id="addbutton">
+    <button class="btn btn-link" data-toggle="modal" data-target="#addbookModal"><span class="material-icons" style="font-size:60px;color:red;">add_circle</span> 
+    </button>      
+  </div>
+ 
+ 
+	
+
+  <div class="container-fluid" style="padding-top: 120px">
+    <div class="px-lg-4">
+      
+      <div class="row">
+        
+      <%for(let i=0;i<bookcollection.length;i++) { %>
+
+        <!-- Gallery item -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+          <div class="bg-white rounded shadow-sm">
+            <div class="p-3">
+              <h5> <a href="#" class="text-dark"><%=bookcollection[i].name%></a></h5>
+              <p class="text-muted mb-0"><%=bookcollection[i].desc%></p>
+              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                <p class="large mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">&#x20b9;<%=bookcollection[i].price%></span></p>
+                <% if(bookcollection[i].type == 'new' || bookcollection[i].type == 'New') { %>
+                <div class="badge badge-success px-3 rounded-pill font-weight-normal"><%=bookcollection[i].type%></div>
+                <% } else { %>
+                <div class="badge badge-warning px-3 rounded-pill font-weight-normal"><%=bookcollection[i].type%></div>
+                <% } %>                
+              </div>
+                                        
+              <!--<p class="text mb-0" style="padding-top: 3px;color: red"><span style="font-size: 17px">&#x24D8; </span><i>Assured seller</i></p>-->
+            </div>
+            
+          </div>          
+        </div>
+      <% } %>
+      <!-- End -->
+
+
+      </div>
+    </div>    
+  </div>
+
+  <div id="cover" style="display: none;"><div id="spinner" class="spinner-grow text-light"></div></div>
+
+  <!-- Add Book Modal-->
+  <div class="modal fade" id="addbookModal">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content" style="background-color: #f4f4f4">
+      <div class="modal-header">
+        <h4>Add a book for sale</h4>
+      </div>
+
+      <!-- Modal body -->
+        <div class="modal-body">
+
+            <form name="addbook" id="addbook" method="post" action="/addbook">
+              <div class="control-group">
+                <label class="control-label" for="name">Book Name<span class="required">*</span> : </label>
+                <div class="controls">
+                  <input required="" id="bookname" name="bookname" type="text" class="form-control" class="input-medium" required="">
+                </div>
+              </div>
+
+              
+              <div class="control-group" style="padding-top: 12px">
+                <label class="control-label" for="description">Description<span class="required">*</span> : </label>
+                <div class="controls">
+                  <textarea required="" id="bookdesc" name="bookdesc" class="form-control" type="text" placeholder="Minimun 20 words" class="input-medium" row="3"></textarea>
+                </div>
+              </div>
+
+              <div class="control-group" style="padding-top: 12px">
+                <label class="control-label" for="bookprice">Price<span class="required">*</span> : </label>
+                <div class="controls">
+                  <input required="" id="bookprice" name="bookprice" class="form-control" type="number" placeholder="" class="input-medium" step=".01">
+                </div>
+              </div>
+
+              <div class="control-group" style="padding-top: 12px">
+                <div class="controls">
+                  <label class="control-label" for="type">Type<span class="required">*</span> : </label>
+                  <input type="radio" required name="booktype" value="new" style="margin-left:10px"> New
+                  <input type="radio" required name="booktype" value="used" style="margin-left:20px"> Used
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="control-group" align="center">
+                <label class="control-label" for="addbook"></label>
+                <div class="controls">
+                  
+                  <button type="submit" class="btn btn-primary">Submit</button>  
+                </div>
+              </div>
+              
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  
+  <!-- Contact Us Modal -->
+
+  <div class="modal fade" id="contactModal">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content" style="background-color: #f4f4f4">
+      <!--<div class="modal-header">
+        <h4>Contact Us</h4>
+      </div>-->
+
+      <!-- Modal body -->
+        <div class="modal-body">
+
+        <div>We would be happy to hear from you at <span><b>vijayendrapagare05@gmail.com</b></span></div>        
+                        
+        </div>
+      </div>
+    </div>
+  </div>
+	 	 
+</body>
+</html>
