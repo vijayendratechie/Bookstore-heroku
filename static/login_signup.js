@@ -29,6 +29,17 @@ $(document).ready(function()
 		} 
 		else if(phone.length==0 || phone.length==10)
 		{
+			var size;
+			if($('body').height() > $(window).height())
+			{
+				size = $('body').height(); 
+			}
+			else
+			{
+				size = $(window).height();	
+			}
+
+			$("#cover").height(size);
 			$("#cover").css("display", "block").fadeIn(100);
 			$('html').css('overflow','hidden');
 			$('body').bind('touchmove', function(e){e.preventDefault()}); 
@@ -101,6 +112,18 @@ $(document).ready(function()
 		else
 		{
 			//console.log(""+email+" "+password);
+
+			var size;
+			if($('body').height() > $(window).height())
+			{
+				size = $('body').height(); 
+			}
+			else
+			{
+				size = $(window).height();	
+			}
+
+			$("#cover").height(size);
 			$("#cover").css("display", "block").fadeIn(100);
 			$('html').css('overflow','hidden');
 			$('body').bind('touchmove', function(e){e.preventDefault()});
