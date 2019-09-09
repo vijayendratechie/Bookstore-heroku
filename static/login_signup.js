@@ -128,7 +128,7 @@ $(document).ready(function()
 			      		$('html').css('overflow','visible');
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
-		    			$('body').css('overflow','hidden');
+		    			$('body').css('overflow','');
 		    			//$('body').unbind('touchmove');
 
 			      		$("#lerror").addClass("alert-danger")
