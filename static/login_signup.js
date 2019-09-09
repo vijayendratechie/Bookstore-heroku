@@ -30,8 +30,10 @@ $(document).ready(function()
 		else if(phone.length==0 || phone.length==10)
 		{
 			$("#cover").css("display", "block").fadeIn(100);
-			$('html').css('overflow','hidden');
-			$('body').bind('touchmove', function(e){e.preventDefault()}); 
+			$('body').css('overflow','hidden');
+			 
+
+			 setTimeout(function(){},15000);
 
 			console.log("send data");
 			$.ajax({
@@ -43,8 +45,7 @@ $(document).ready(function()
 			    {   
 			      	//console.log("Callback info is :"+info);
 			      	$("#cover").fadeOut(100);
-		    		$('html').css('overflow','visible');
-		    		$('body').unbind('touchmove');
+		    		$('body').css('overflow','visible');
 		    		$("#cover").css("display", "none");
 
 			      	if(info.message == -1)
@@ -103,10 +104,8 @@ $(document).ready(function()
 			//console.log(""+email+" "+password);
 
 			$("#cover").css("display", "block").fadeIn(100);
-			$('html').css('overflow','hidden');
 			$('body').css('overflow','hidden');
-			//$('body').bind('touchmove', function(e){e.preventDefault()});
-
+			
 			$.ajax({
 			    type: "POST",
 			    url: "https://discountedtrade.herokuapp.com/login",
@@ -125,11 +124,10 @@ $(document).ready(function()
 			      	}
 			      	else
 			      	{
-			      		$('html').css('overflow','visible');
+			      		$('body').css('overflow','visible');
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
-		    			$('body').css('overflow','');
-		    			//$('body').unbind('touchmove');
+		    					    			
 
 			      		$("#lerror").addClass("alert-danger")
 			      		$("#lerror").html(info.message[0]);
