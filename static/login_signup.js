@@ -1,12 +1,5 @@
 $(document).ready(function()
 {
-	$("#loginModal").on('show.bs.modal', function(){
-    
-  	$('body').css('overflow','hidden');
-  	
-  		
-  });
-
 	$("#signupbtn").click(function()
 	{
 		$("#serror").css("display", "none");
@@ -38,8 +31,6 @@ $(document).ready(function()
 			$("#cover").css("display", "block").fadeIn(100);
 			$('body').css('overflow','hidden');
 			 
-
-			 setTimeout(function(){},15000);
 
 			console.log("send data");
 			$.ajax({
