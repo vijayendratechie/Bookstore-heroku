@@ -1,5 +1,11 @@
 $(document).ready(function()
 {
+	$("#loginModal").on('show.bs.modal', function(){
+    
+  	$('body').css('overflow','hidden');
+  	
+  		
+  });
 
 	$("#signupbtn").click(function()
 	{

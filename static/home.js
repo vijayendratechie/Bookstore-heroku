@@ -1,7 +1,11 @@
 $(document).ready(function()
 {
 	$('[data-toggle="tooltip"]').tooltip();
+
 });
+
+
+
 
 function buybook(bookid,id,user)
 {
