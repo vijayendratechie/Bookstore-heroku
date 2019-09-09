@@ -14,17 +14,6 @@ function buybook(bookid,id,user)
 	{
 		console.log("function is :"+JSON.stringify(id));
 
-		var size;
-		if($('body').height() > $(window).height())
-		{
-			size = $('body').height(); 
-		}
-		else
-		{
-			size = $(window).height();	
-		}
-
-		$("#cover").height(size);
 		$("#cover").css("display", "block").fadeIn(100);		
 		$('html').css('overflow','hidden');	
 		$.ajax({

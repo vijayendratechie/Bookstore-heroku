@@ -29,17 +29,6 @@ $(document).ready(function()
 		} 
 		else if(phone.length==0 || phone.length==10)
 		{
-			var size;
-			if($('body').height() > $(window).height())
-			{
-				size = $('body').height(); 
-			}
-			else
-			{
-				size = $(window).height();	
-			}
-
-			$("#cover").height(size);
 			$("#cover").css("display", "block").fadeIn(100);
 			$('html').css('overflow','hidden');
 			$('body').bind('touchmove', function(e){e.preventDefault()}); 
@@ -113,20 +102,10 @@ $(document).ready(function()
 		{
 			//console.log(""+email+" "+password);
 
-			var size;
-			if($('body').height() > $(window).height())
-			{
-				size = $('body').height(); 
-			}
-			else
-			{
-				size = $(window).height();	
-			}
-
-			$("#cover").height(size);
 			$("#cover").css("display", "block").fadeIn(100);
 			$('html').css('overflow','hidden');
-			$('body').bind('touchmove', function(e){e.preventDefault()});
+			$('body').css('overflow','hidden');
+			//$('body').bind('touchmove', function(e){e.preventDefault()});
 
 			$.ajax({
 			    type: "POST",
@@ -149,7 +128,8 @@ $(document).ready(function()
 			      		$('html').css('overflow','visible');
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
-		    			$('body').unbind('touchmove');
+		    			$('body').css('overflow','hidden');
+		    			//$('body').unbind('touchmove');
 
 			      		$("#lerror").addClass("alert-danger")
 			      		$("#lerror").html(info.message[0]);
