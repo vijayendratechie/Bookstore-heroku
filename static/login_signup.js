@@ -20,7 +20,7 @@ $(document).ready(function()
 		
 		/*/[0-9]{4}-[0-9]{3}-[0-9]{3}/*/
 
-		console.log("Signup info is : "+phone);
+		//console.log("Signup info is : "+phone);
 		
 		if(name=="" || email=="" || password=="")
 		{
@@ -114,7 +114,8 @@ $(document).ready(function()
 			      	
 			      	if(info.message == "success")
 			      	{
-			      		window.location.href = "https://discountedtrade.herokuapp.com/";
+			      		console.log("login success");
+			      		//window.location.href = "https://discountedtrade.herokuapp.com/";
 			      		//$("#cover").fadeOut(100);
 		    			//$("#cover").css("display", "none");
 			      		//window.location.href = "http://localhost:3000/";	

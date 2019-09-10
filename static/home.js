@@ -6,7 +6,6 @@ $(document).ready(function()
 
 
 
-
 function buybook(bookid,id,user)
 {
 	//console.log("user is :"+JSON.stringify(user));
@@ -16,7 +15,7 @@ function buybook(bookid,id,user)
 	}
 	else
 	{
-		console.log("function is :"+JSON.stringify(id));
+		//console.log("function is :"+JSON.stringify(id));
 
 		$("#cover").css("display", "block").fadeIn(100);		
 		$('body').css('overflow','hidden');	
