@@ -6,7 +6,7 @@ $(document).ready(function()
 	
 	if (isMobile) 
 	{
-		alert("Mobile");	
+		//alert("Mobile");	
 		$("#cover").remove();
 	} 
 });

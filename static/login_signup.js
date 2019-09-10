@@ -101,7 +101,7 @@ $(document).ready(function()
 			//console.log(""+email+" "+password);
 
 			$("#cover").css("display", "block").fadeIn(100);
-			$('body').css('overflow-y','hidden');
+			$('body').css('overflow','hidden');
 			
 			$.ajax({
 			    type: "POST",
@@ -116,7 +116,7 @@ $(document).ready(function()
 			      	{
 			      		console.log("login success");
 			      		
-			      		$('body').css('overflow-y','visible');	
+			      		$('body').css('overflow','visible');	
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
 			      		window.location.href = "https://discountedtrade.herokuapp.com/";
@@ -124,7 +124,7 @@ $(document).ready(function()
 			      	}
 			      	else
 			      	{
-			      		$('body').css('overflow-y','visible');
+			      		$('body').css('overflow','visible');
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
 		    					    			
