@@ -1,15 +1,5 @@
 $(document).ready(function()
 {
-	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-	
-	if (isMobile) {
-		alert("Mobile");
-	} 
-	else
-	{
-		alert("You are using Desktop");
-	}
-
 	$("#signupbtn").click(function()
 	{
 		$("#serror").css("display", "none");
