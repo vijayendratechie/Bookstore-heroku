@@ -116,8 +116,8 @@ $(document).ready(function()
 			      	{
 			      		console.log("login success");
 			      		//window.location.href = "https://discountedtrade.herokuapp.com/";
-			      		//$("#cover").fadeOut(100);
-		    			//$("#cover").css("display", "none");
+			      		$("#cover").fadeOut(100);
+		    			$("#cover").css("display", "none");
 			      		//window.location.href = "http://localhost:3000/";	
 			      	}
 			      	else
