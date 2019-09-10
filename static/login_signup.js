@@ -1,5 +1,15 @@
 $(document).ready(function()
 {
+	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+	
+	if (isMobile) {
+		alert("Mobile");
+	} 
+	else
+	{
+		alert("You are using Desktop");
+	}
+
 	$("#signupbtn").click(function()
 	{
 		$("#serror").css("display", "none");
@@ -101,7 +111,7 @@ $(document).ready(function()
 			//console.log(""+email+" "+password);
 
 			$("#cover").css("display", "block").fadeIn(100);
-			$('body').css('overflow','hidden');
+			$('body').css('overflow-y','hidden');
 			
 			$.ajax({
 			    type: "POST",
@@ -116,6 +126,7 @@ $(document).ready(function()
 			      	{
 			      		console.log("login success");
 			      		
+			      		$('body').css('overflow-y','visible');	
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
 			      		window.location.href = "https://discountedtrade.herokuapp.com/";
@@ -123,7 +134,7 @@ $(document).ready(function()
 			      	}
 			      	else
 			      	{
-			      		$('body').css('overflow','visible');
+			      		$('body').css('overflow-y','visible');
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
 		    					    			
