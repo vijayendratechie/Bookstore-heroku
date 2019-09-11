@@ -279,7 +279,7 @@ app.get("/",function(req,res)
 })
 
 
-app.post("/addbook",authenticationMiddleware(),function(req,res)
+app.post("/addbook",authenticationMiddleware(),function add(req,res)
 {
 	//console.log(req.body);
 
@@ -302,15 +302,12 @@ app.post("/addbook",authenticationMiddleware(),function(req,res)
 
 })
 
-
 app.post("/buybook",authenticationMiddleware(),function(req,res)
 {
 	var bookid = req.body.id;
 	var user = req.user;
 
-
-
-	console.log("info got from ajax buy book call"+JSON.stringify(bookid));
+	console.log("info received from buybook ajax call : "+JSON.stringify(bookid)+" "+JSON.stringify(req.user));
 
 	Books.find({_id : bookid})
 	.exec()
@@ -329,7 +326,7 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 			.exec()
 			.then(useremail => {
 
-				//sendemailtoseller(bookowner[0].email,bookowner[0].name,res,bookname,useremail[0].toObject());
+				sendemailtoseller(bookowner[0].email,bookowner[0].name,res,bookname,useremail[0].toObject());
 				
 				var purchases = new Purchases({
 					_id : mongoose.Types.ObjectId(),
@@ -534,7 +531,7 @@ function sendemailtoseller(bookowneremail,bookownername,res,bookname,buyerinfo)
 		  to: bookowneremail,
 		  subject: bookname+' has got an interested buyer',
 		  //html : '<a href="https://discountedtrade.herokuapp.com/confirmemail?email='+email+'" return false;>Click me</a>'
-		  html : '<div>Hi '+bookownername+',</div><p> Your book <b>'+bookname+'</b> has got an interested buyer. Please contact the buyer '+buyerinfo.name+' at '+buyerinfo.email+' for further action</p>'
+		  html : '<div>Hi '+bookownername+',</div><p> Your book <b>'+bookname+'</b> has got an interested buyer. Please contact the buyer'+buyerinfo.name+' at '+buyerinfo.email+' for further action</p>'
 		};	
 	}		
 	
@@ -593,6 +590,7 @@ passport.use(
 		{
 			if(userinfo[0].toObject().hasOwnProperty('gid'))
 			{
+				console.log("user logged in");
 				done(null,userinfo[0]._id);
 			}
 			else
@@ -642,7 +640,7 @@ passport.use(
 
 
 //API's with JWT authorization
-//To get token signup or login to the application(http://localhost:3000/) and then you will get the token on the console screen upon successful login
+//To get token signup or login to the application(https://discountedtrade.herokuapp.com/) and then you will get the token on the console screen upon successful login
 
 app.get("/token",authenticationMiddleware(),function(req,res)
 {

@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+
+
 	$("#signupbtn").click(function()
 	{
 		$("#serror").css("display", "none");
@@ -20,7 +22,7 @@ $(document).ready(function()
 		
 		/*/[0-9]{4}-[0-9]{3}-[0-9]{3}/*/
 
-		//console.log("Signup info is : "+phone);
+		console.log("Signup info is : "+phone);
 		
 		if(name=="" || email=="" || password=="")
 		{
@@ -30,8 +32,6 @@ $(document).ready(function()
 		{
 			$("#cover").css("display", "block").fadeIn(100);
 			$('body').css('overflow','hidden');
-			 
-
 			console.log("send data");
 			$.ajax({
 			    type: "POST",
@@ -44,7 +44,6 @@ $(document).ready(function()
 			      	$("#cover").fadeOut(100);
 		    		$('body').css('overflow','visible');
 		    		$("#cover").css("display", "none");
-
 			      	if(info.message == -1)
 			      	{
 			      		$("#serror").addClass("alert-danger")
@@ -77,7 +76,7 @@ $(document).ready(function()
 			    },
 			    error: function(XMLHttpRequest, textStatus, errorThrown)
 			    {
-					console.log("Error in signup : "+errorThrown);	    	
+					console.log("Error in signup");	    	
 			    }
 		    });	
 		}
@@ -114,21 +113,17 @@ $(document).ready(function()
 			      	
 			      	if(info.message == "success")
 			      	{
-			      		console.log("login success");
-			      		
-			      			
+			      	
+			      		//window.location.href = "https://discountedtrade.herokuapp.com/";
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
-			      		window.location.href = "https://discountedtrade.herokuapp.com/";
-			      		//window.location.href = "http://localhost:3000/";	
+			      		//window.location.href = "https://discountedtrade.herokuapp.com/";	
 			      	}
 			      	else
 			      	{
 			      		$('body').css('overflow','visible');
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
-		    					    			
-
 			      		$("#lerror").addClass("alert-danger")
 			      		$("#lerror").html(info.message[0]);
 			      		$("#lerror").css("display", "block");
@@ -136,7 +131,7 @@ $(document).ready(function()
 			    },
 			    error: function(XMLHttpRequest, textStatus, errorThrown)
 			    {
-			    	console.log("Error in login : "+errorThrown);	
+			    	
 			    }
 		    });	
 		}	

@@ -58,7 +58,6 @@
     </div>
   </nav>
 
-
   
 
   <div class="row" id="addbutton">
@@ -71,9 +70,6 @@
     <% } %>  
   </div>
  
- 
-	
-
   <div class="container-fluid" style="padding-top: 120px">
     <div class="px-lg-4">
       
@@ -97,7 +93,6 @@
               </div>
               
               <div class="text-center" style="padding-top: 20px">
-                
                 <% if(bookcollection[i].status == 'available') { %>
                 <button class="btn btn-primary" id="<%=i%>" onclick="buybook(<%=JSON.stringify(bookcollection[i]._id)%>,this.id,<%=JSON.stringify(user)%>)">Buy</button>   
                 <% } else if(bookcollection[i].status == 'sold') { %>

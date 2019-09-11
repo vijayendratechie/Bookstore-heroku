@@ -4,35 +4,35 @@ $(document).ready(function()
 
 	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 	
-	if (isMobile) 
-	{
-		//alert("Mobile");	
-		$("#cover").remove();
+	if (isMobile) {
+		console	.log("Mobile");
 	} 
+	else
+	{
+		console.log("You are using Desktop");
+	}
 });
-
-
 
 function buybook(bookid,id,user)
 {
-	console.log("user is :"+JSON.stringify(user));
+	//console.log("user is :"+JSON.stringify(user));
 	if(user!= true)
 	{
 		alert("Login to buy or add books");
 	}
 	else
 	{
-		//console.log("function is :"+JSON.stringify(id));
+		console.log("function is :"+JSON.stringify(id));
 
 		$("#cover").css("display", "block").fadeIn(100);		
 		$('body').css('overflow','hidden');	
-
 		$.ajax({
 		    type: "POST",
 		    url: "https://discountedtrade.herokuapp.com/buybook",
 		    data: {id : bookid},
 		    dataType: "text",
-		    success: function(info)		    
+		    success: function(info)
+		    
 		    {     
 		    	console.log("Callback info is :"+info);	
 		    	$('#'+id).html("Sold").attr("disabled",true);

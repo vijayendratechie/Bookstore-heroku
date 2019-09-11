@@ -6,7 +6,6 @@
     background-color: black;
 }
 
-
 .rightalign {
     position: relative;
     display: inline-block;
@@ -24,7 +23,8 @@
    opacity: 0.40;
    background: grey;
    z-index: 10000;
-   display: none;  
+   display: none;
+   /*overflow: auto;*/
 }
 
 #spinner{
