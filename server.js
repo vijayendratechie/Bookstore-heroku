@@ -308,7 +308,9 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 	var bookid = req.body.id;
 	var user = req.user;
 
-	//console.log("buy book"+JSON.stringify(bookid));
+
+
+	console.log("info got from ajax buy book call"+JSON.stringify(bookid));
 
 	Books.find({_id : bookid})
 	.exec()
@@ -327,7 +329,7 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 			.exec()
 			.then(useremail => {
 
-				sendemailtoseller(bookowner[0].email,bookowner[0].name,res,bookname,useremail[0].toObject());
+				//sendemailtoseller(bookowner[0].email,bookowner[0].name,res,bookname,useremail[0].toObject());
 				
 				var purchases = new Purchases({
 					_id : mongoose.Types.ObjectId(),
