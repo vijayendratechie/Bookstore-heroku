@@ -30,7 +30,7 @@ app.use(bodyparser());
 app.use(express.static(path.join(__dirname,"static")));
 app.use(cookieParser());
 
-app.use((req,res,next) => {
+/*app.use((req,res,next) => {
 	res.header("Access-Control-Allow-Origin","*");
 	res.header("Access-Control-Allow-Headers","*");
 	if(req.method === 'OPTIONS')
@@ -39,7 +39,7 @@ app.use((req,res,next) => {
 		return res.status(200).json({});
 	}
 	next();
-});
+});*/
 
 
 app.use(session({
@@ -308,6 +308,8 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 	var user = req.user;
 
 	console.log("info received from buybook ajax call : "+JSON.stringify(bookid)+" "+JSON.stringify(req.user));
+
+	//res.send("Sold");
 
 	Books.find({_id : bookid})
 	.exec()
