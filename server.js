@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname,"static")));
 app.use(cookieParser());
 
 app.use((req,res,next) => {
+	console.log("CORS function");
 	res.header("Access-Control-Allow-Origin","*");
 	res.header("Access-Control-Allow-Headers","*");
 	if(req.method === 'OPTIONS')
