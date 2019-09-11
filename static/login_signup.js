@@ -116,7 +116,7 @@ $(document).ready(function()
 			      	{
 			      		console.log("login success");
 			      		
-			      		$('body').css('overflow','visible');	
+			      			
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
 			      		window.location.href = "https://discountedtrade.herokuapp.com/";

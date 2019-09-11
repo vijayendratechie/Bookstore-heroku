@@ -279,7 +279,7 @@ app.get("/",function(req,res)
 })
 
 
-app.post("/addbook",authenticationMiddleware(),function add(req,res)
+app.post("/addbook",authenticationMiddleware(),function(req,res)
 {
 	//console.log(req.body);
 
@@ -301,6 +301,7 @@ app.post("/addbook",authenticationMiddleware(),function add(req,res)
 	})
 
 })
+
 
 app.post("/buybook",authenticationMiddleware(),function(req,res)
 {
@@ -339,14 +340,17 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 					console.log("Updated in purchase table");
 					
 					Books.findOneAndUpdate({_id : bookid},{status : 'sold'})
-					.exec(() => {
+					.exec()
+					.then(() => {
 						res.send("Sold");
 					})
-					//.catch(err => {
-						//console.log("Error while updating status to sold : "+err);
-					//})					
+					.catch(err => {
+						console.log("Error while updating status to sold : "+err);
+					})					
 				})
-				.catch();				
+				.catch(err => {
+					console.log("Error while saving info to purchase document : "+err);
+				});				
 			})
 			.catch(err => {
 				console.log("Error while getting email of using in buybook : "+err);
