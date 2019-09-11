@@ -117,7 +117,7 @@ $(document).ready(function()
 			      		//window.location.href = "https://discountedtrade.herokuapp.com/";
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
-			      		//window.location.href = "https://discountedtrade.herokuapp.com/";	
+			      		window.location.href = "https://discountedtrade.herokuapp.com/";	
 			      	}
 			      	else
 			      	{
