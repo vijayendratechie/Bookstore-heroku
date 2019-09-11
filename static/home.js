@@ -15,7 +15,7 @@ $(document).ready(function()
 
 function buybook(bookid,id,user)
 {
-	//console.log("user is :"+JSON.stringify(user));
+	console.log("user is :"+JSON.stringify(user));
 	if(user!= true)
 	{
 		alert("Login to buy or add books");
@@ -32,8 +32,7 @@ function buybook(bookid,id,user)
 		    url: "https://discountedtrade.herokuapp.com/buybook",
 		    data: {id : bookid},
 		    dataType: "text",
-		    success: function(info)
-		    
+		    success: function(info)		    
 		    {     
 		    	console.log("Callback info is :"+info);	
 		    	$('#'+id).html("Sold").attr("disabled",true);
