@@ -30,11 +30,10 @@ function buybook(bookid,id,user)
 		    type: "POST",
 		    url: "https://discountedtrade.herokuapp.com/buybook",
 		    data: {id : bookid},
-		    dataType: "text",
-		    success: function(info)
-		    
+		    dataType: "json",
+		    success: function(info)		    
 		    {     
-		    	console.log("Callback info is :"+info);	
+		    	console.log("Callback info is :"+info.message);	
 		    	$('#'+id).html("Sold").attr("disabled",true);
 		    	$('body').css('overflow','visible');
 		    	$("#cover").fadeOut(100);

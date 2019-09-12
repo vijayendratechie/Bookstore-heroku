@@ -37,7 +37,7 @@ app.use((req,res,next) => {
 	if(req.method === 'OPTIONS')
 	{
 		res.header('Access-Control-Allow-Methods','GET, POST');
-		return res.status(200);
+		//return res.status(200);
 	}
 	next();
 });
@@ -280,7 +280,7 @@ app.get("/",function(req,res)
 })
 
 
-app.post("/addbook",authenticationMiddleware(),function add(req,res)
+app.post("/addbook",authenticationMiddleware(),function(req,res)
 {
 	//console.log(req.body);
 
@@ -344,7 +344,7 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 					Books.findOneAndUpdate({_id : bookid},{status : 'sold'})
 					.exec()
 					.then(() => {
-						res.send("Sold");
+						res.send({message : 'sold'});
 					})
 					.catch(err => {
 						console.log("Error while updating status to sold : "+err);
