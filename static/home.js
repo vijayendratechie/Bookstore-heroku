@@ -46,7 +46,7 @@ function buybook(bookid,id,user)
 		    	$("#cover").fadeOut(100);
 		    	$("#cover").css("display", "none");  
 		    	alert("Error while buying.Please try again");
-		        console.log('err: '+XMLHttpRequest.status);
+		        console.log('err: '+XMLHttpRequest.status+"\n"+errorThrown+"\n"+textStatus);
 		    }
 	    });	
 	}	
