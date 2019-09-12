@@ -344,7 +344,7 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 					Books.findOneAndUpdate({_id : bookid},{status : 'sold'})
 					.exec()
 					.then(() => {
-						res.send({message : 'sold'});
+						res.json({message : 'sold'});
 					})
 					.catch(err => {
 						console.log("Error while updating status to sold : "+err);
