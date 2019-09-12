@@ -37,7 +37,7 @@ app.use((req,res,next) => {
 	if(req.method === 'OPTIONS')
 	{
 		res.header('Access-Control-Allow-Methods','GET, POST');
-		//return res.status(200);
+		return res.status(200);
 	}
 	next();
 });
