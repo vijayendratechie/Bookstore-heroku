@@ -30,10 +30,11 @@ function buybook(bookid,id,user)
 		    type: "POST",
 		    url: "https://discountedtrade.herokuapp.com/buybook",
 		    data: {id : bookid},
-		    dataType: "json",
-		    success: function(info)		    
+		    dataType: "text",
+		    success: function(info)
+		    
 		    {     
-		    	console.log("Callback info is :"+info.message);	
+		    	console.log("Callback info is :"+info);	
 		    	$('#'+id).html("Sold").attr("disabled",true);
 		    	$('body').css('overflow','visible');
 		    	$("#cover").fadeOut(100);
@@ -46,7 +47,7 @@ function buybook(bookid,id,user)
 		    	$("#cover").fadeOut(100);
 		    	$("#cover").css("display", "none");  
 		    	alert("Error while buying.Please try again");
-		        console.log('err: '+XMLHttpRequest.status+"\n"+errorThrown+"\n"+textStatus);
+		        console.log('err: '+XMLHttpRequest.status);
 		    }
 	    });	
 	}	

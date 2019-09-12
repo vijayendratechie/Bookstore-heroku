@@ -31,7 +31,6 @@ app.use(express.static(path.join(__dirname,"static")));
 app.use(cookieParser());
 
 app.use((req,res,next) => {
-	console.log("CORS function");
 	res.header("Access-Control-Allow-Origin","*");
 	res.header("Access-Control-Allow-Headers","*");
 	if(req.method === 'OPTIONS')
@@ -280,7 +279,7 @@ app.get("/",function(req,res)
 })
 
 
-app.post("/addbook",authenticationMiddleware(),function(req,res)
+app.post("/addbook",authenticationMiddleware(),function add(req,res)
 {
 	//console.log(req.body);
 
@@ -308,9 +307,7 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 	var bookid = req.body.id;
 	var user = req.user;
 
-	console.log("info received from buybook ajax call : "+JSON.stringify(bookid)+" "+JSON.stringify(req.user));
-
-	//res.send("Sold");
+	console.log("buy book"+JSON.stringify(bookid));
 
 	Books.find({_id : bookid})
 	.exec()
@@ -344,7 +341,7 @@ app.post("/buybook",authenticationMiddleware(),function(req,res)
 					Books.findOneAndUpdate({_id : bookid},{status : 'sold'})
 					.exec()
 					.then(() => {
-						res.send('sold');
+						res.send("Sold");
 					})
 					.catch(err => {
 						console.log("Error while updating status to sold : "+err);
@@ -593,7 +590,6 @@ passport.use(
 		{
 			if(userinfo[0].toObject().hasOwnProperty('gid'))
 			{
-				console.log("user logged in");
 				done(null,userinfo[0]._id);
 			}
 			else
