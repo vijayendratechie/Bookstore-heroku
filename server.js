@@ -494,7 +494,7 @@ function sendmail(email,name,res)
 	//console.log("email while sending mail is : "+email);
 	
 	var mailOptions = {
-	  from: 'vijayendracourse@gmail.com',
+	  from: 'discountedtradee@gmail.com',
 	  to: email,
 	  subject: 'Verify email address',
 	  //html : '<a href="https://discountedtrade.herokuapp.com/confirmemail?email='+email+'" return false;>Click me</a>'
@@ -522,7 +522,7 @@ function sendemailtoseller(bookowneremail,bookownername,res,bookname,buyerinfo)
 	if(buyerinfo.hasOwnProperty('phone') && bookowneremail=='vijayendrapagare05@gmail.com')
 	{
 		var mailOptions = {
-		  from: 'vijayendracourse@gmail.com',
+		  from: 'discountedtradee@gmail.com',
 		  to: bookowneremail,
 		  subject: bookname+' has got an interested buyer',
 		  //html : '<a href="https://discountedtrade.herokuapp.com/confirmemail?email='+email+'" return false;>Click me</a>'
@@ -532,7 +532,7 @@ function sendemailtoseller(bookowneremail,bookownername,res,bookname,buyerinfo)
 	else
 	{
 		var mailOptions = {
-		  from: 'vijayendracourse@gmail.com',
+		  from: 'discountedtradee@gmail.com',
 		  to: bookowneremail,
 		  subject: bookname+' has got an interested buyer',
 		  //html : '<a href="https://discountedtrade.herokuapp.com/confirmemail?email='+email+'" return false;>Click me</a>'
