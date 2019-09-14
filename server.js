@@ -473,10 +473,15 @@ var transporter = nodemailer.createTransport({
 	service : 'gmail',
 	auth : {
 		type : "oauth2",	
-		user : 'vijayendracourse@gmail.com',
-		clientId : '734132093263-07tbcmloe50fjlfp5darjqasmeb6jovs.apps.googleusercontent.com',
-		clientSecret : 'ru8T55pLk0tEf9j2JKtCTZPd',
-		refreshToken :  '1/bnD8nGeCOvF8cN0IMKMmJaHn7U5Tsgj2oKR-gMdVPJg'	
+		user : "discountedtradee@gmail.com"
+		clientId : "95883734910-m9jlu2dqass2upsdu0anolbl022epddu.apps.googleusercontent.com",
+		clientSecret : "ixRJZS_DeQJqYR46mAWHOkKt",
+		refreshToken : "1/28Hs_ExaRXILNxVMg27fiWjq-RnpvozDdlbSKDy0VdjoITaQjPF19G37OagQ7Qpl",
+
+		//user : 'vijayendracourse@gmail.com',
+		//clientId : '734132093263-07tbcmloe50fjlfp5darjqasmeb6jovs.apps.googleusercontent.com',
+		//clientSecret : 'ru8T55pLk0tEf9j2JKtCTZPd',
+		//refreshToken :  '1/bnD8nGeCOvF8cN0IMKMmJaHn7U5Tsgj2oKR-gMdVPJg'	
 	},
 	tls: {
       rejectUnauthorized: false
@@ -568,7 +573,7 @@ passport.use(
 	callbackURL : "/google/redirect",
 	clientID : "95883734910-m9jlu2dqass2upsdu0anolbl022epddu.apps.googleusercontent.com",
 	clientSecret : "ixRJZS_DeQJqYR46mAWHOkKt"
-	//clientID : "734132093263-07tbcmloe50fjlfp5darjqasmeb6jovs.apps.googleusercontent.com", //google credentials for hosting on heroku
+	//clientID : "734132093263-07tbcmloe50fjlfp5darjqasmeb6jovs.apps.googleusercontent.com", //google credentials for hosting on heroku with vijayendracourse
 	//clientSecret : "ru8T55pLk0tEf9j2JKtCTZPd"
 },function(accessToken,refreshToken,profile,done)
 {
