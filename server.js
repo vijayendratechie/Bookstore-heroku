@@ -476,7 +476,7 @@ var transporter = nodemailer.createTransport({
 		user : "discountedtradee@gmail.com"
 		clientId : "95883734910-m9jlu2dqass2upsdu0anolbl022epddu.apps.googleusercontent.com",
 		clientSecret : "ixRJZS_DeQJqYR46mAWHOkKt",
-		refreshToken : "1/28Hs_ExaRXILNxVMg27fiWjq-RnpvozDdlbSKDy0VdjoITaQjPF19G37OagQ7Qpl",
+		refreshToken : "1/28Hs_ExaRXILNxVMg27fiWjq-RnpvozDdlbSKDy0VdjoITaQjPF19G37OagQ7Qpl"
 
 		//user : 'vijayendracourse@gmail.com',
 		//clientId : '734132093263-07tbcmloe50fjlfp5darjqasmeb6jovs.apps.googleusercontent.com',
