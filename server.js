@@ -33,11 +33,11 @@ app.use(cookieParser());
 app.use((req,res,next) => {
 	res.header("Access-Control-Allow-Origin","*");
 	res.header("Access-Control-Allow-Headers","*");
-	/*if(req.method === 'OPTIONS')
+	if(req.method === 'OPTIONS')
 	{
 		res.header('Access-Control-Allow-Methods','GET, POST');
 		return res.status(200).json({});
-	}*/
+	}
 	next();
 });
 
@@ -566,8 +566,10 @@ app.get("/google/redirect",passport.authenticate("google"),function(req,res)
 passport.use(
 		new googlestrategy({
 	callbackURL : "/google/redirect",
-	clientID : "734132093263-07tbcmloe50fjlfp5darjqasmeb6jovs.apps.googleusercontent.com", //google credentials for hosting on heroku
-	clientSecret : "ru8T55pLk0tEf9j2JKtCTZPd"
+	clientID : "95883734910-m9jlu2dqass2upsdu0anolbl022epddu.apps.googleusercontent.com",
+	clientSecret : "ixRJZS_DeQJqYR46mAWHOkKt"
+	//clientID : "734132093263-07tbcmloe50fjlfp5darjqasmeb6jovs.apps.googleusercontent.com", //google credentials for hosting on heroku
+	//clientSecret : "ru8T55pLk0tEf9j2JKtCTZPd"
 },function(accessToken,refreshToken,profile,done)
 {
 	//console.log("redirect to passport");
