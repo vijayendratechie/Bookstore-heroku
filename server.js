@@ -473,7 +473,7 @@ var transporter = nodemailer.createTransport({
 	service : 'gmail',
 	auth : {
 		type : "oauth2",	
-		user : "discountedtradee@gmail.com"
+		user : "discountedtradee@gmail.com",
 		clientId : "95883734910-m9jlu2dqass2upsdu0anolbl022epddu.apps.googleusercontent.com",
 		clientSecret : "ixRJZS_DeQJqYR46mAWHOkKt",
 		refreshToken : "1/28Hs_ExaRXILNxVMg27fiWjq-RnpvozDdlbSKDy0VdjoITaQjPF19G37OagQ7Qpl"
