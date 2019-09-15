@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	  <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="expires" content="0">
 
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>	  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="home_style.css"></a>	  
+    <link rel="stylesheet" type="text/css" href="home_style.css"></a>   
     <script type="text/javascript" src="home.js"></script>
     <script type="text/javascript" src="login_signup.js"></script>    
-    	   
+         
 </head>
 <body>
 
@@ -211,9 +211,9 @@
                 </div>
               </div>
 
-              <div class="control-group" align="center">               
+              <!--<div class="control-group" align="center">               
                   <a class="btn btn-link" href="https://discountedtrade.herokuapp.com/google"><u>Google login</u></a>
-              </div>              
+              </div>-->              
           
         </div>
       </div>
@@ -273,9 +273,9 @@
                 </div>
               </div>
 
-              <div class="control-group" align="center">               
+              <!--<div class="control-group" align="center">               
                   <a class="btn btn-link" href="https://discountedtrade.herokuapp.com/google"><u>Google login</u></a>
-              </div>          
+              </div>-->          
         </div>
       </div>
     </div>
@@ -300,6 +300,34 @@
       </div>
     </div>
   </div>
-	 	 
+
+  <div class="modal fade" id="buyBook">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content" style="background-color: #f4f4f4">
+      <!--<div class="modal-header">
+        <h4>Contact Us</h4>
+      </div>-->
+
+      <!-- Modal body -->
+        <div class="modal-body">
+
+        <div>Do you want us to notify the seller!!</div>
+
+        <div class="control-group">
+          <label class="control-label" for="buybookconfirmation"></label>
+          <div class="controls">
+            <button class="btn btn-primary btn-sm" onclick="buyingbookcancel()">No,take me back</button>
+            <button class="btn btn-primary btn-sm yesbtn" style="margin-left: 20px" id="" onclick="buyingbookconfirmed(this.id)">Yes,go ahead</button>
+          </div>
+        </div>
+
+        
+                
+                        
+        </div>
+      </div>
+    </div>
+  </div>
+     
 </body>
 </html>
