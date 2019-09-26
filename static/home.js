@@ -5,7 +5,7 @@ $(document).ready(function()
 	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 	
 	if (isMobile) {
-		console	.log("Mobile");
+		console.log("Mobile");
 	} 
 	else
 	{
@@ -21,7 +21,7 @@ function buybook(bookid,id,user)
 	uniquebookcardid = id;
 	if(user!= true)
 	{
-		alert("Login to buy or add books");
+		alert("Please login to buy or add books");
 	}
 	else
 	{
