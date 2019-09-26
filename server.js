@@ -432,7 +432,7 @@ app.get("/confirmemail",function(req,res)
 	Users.findOneAndUpdate({email : req.query.email},{$set : {confirm : 2}})
 	.exec()
 	.then(result => {
-		res.send("Email address verified successful");
+		res.send("Email address verified successful. Please login.");
 	})
 	.catch(err => {
 		console.log("Email address not verified");
