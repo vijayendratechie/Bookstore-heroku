@@ -70,11 +70,11 @@
         <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
           <div class="bg-white rounded shadow-sm">
             <div class="p-3">
-              <h5> <a href="#" class="text-dark"><%=bookcollection[i].name%></a></h5>
+              <h5> <p class="text-dark"><%=bookcollection[i].name%></p></h5>
               <p class="text-muted mb-0"><%=bookcollection[i].desc%></p>
               <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
                 <p class="large mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">&#x20b9;<%=bookcollection[i].price%></span></p>
-                <% if(bookcollection[i].type == 'new' || bookcollection[i].type == 'New') { %>
+                <% if(bookcollection[i].type == 'new' || bookcollection[i].type == 'New' || bookcollection[i].type == 'Resale'|| bookcollection[i].type == 'resale' ) { %>
                 <div class="badge badge-success px-3 rounded-pill font-weight-normal"><%=bookcollection[i].type%></div>
                 <% } else { %>
                 <div class="badge badge-warning px-3 rounded-pill font-weight-normal"><%=bookcollection[i].type%></div>
