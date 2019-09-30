@@ -104,7 +104,7 @@ $(document).ready(function()
 			
 			$.ajax({
 			    type: "POST",
-			    url: "https://discountedtrade.in/login",
+			    url: "https://www.discountedtrade.in/login",
 			    data: {email : email,password : password},
 			    dataType: "json",
 			    success: function(info)
