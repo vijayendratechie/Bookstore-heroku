@@ -41,7 +41,7 @@ function buyingbookconfirmed(bookid)
 	$('body').css('overflow','hidden');	
 	$.ajax({
 	    type: "POST",
-	    url: "https://discountedtrade.in/buybook",
+	    url: "http://www.discountedtrade.in/buybook",
 	    data: {id : bookid},
 	    dataType: "text",
 	    success: function(info)
