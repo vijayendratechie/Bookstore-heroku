@@ -35,7 +35,7 @@ $(document).ready(function()
 			console.log("send data");
 			$.ajax({
 			    type: "POST",
-			    url: "https://discountedtrade.herokuapp.com/signup",
+			    url: "https://discountedtrade.in/signup",
 			    data: {name : name,email : email,password : password,phone : phone},
 			    dataType: "json",
 			    success: function(info)
@@ -104,7 +104,7 @@ $(document).ready(function()
 			
 			$.ajax({
 			    type: "POST",
-			    url: "https://discountedtrade.herokuapp.com/login",
+			    url: "https://discountedtrade.in/login",
 			    data: {email : email,password : password},
 			    dataType: "json",
 			    success: function(info)
@@ -117,7 +117,7 @@ $(document).ready(function()
 			      		//window.location.href = "https://discountedtrade.herokuapp.com/";
 			      		$("#cover").fadeOut(100);
 		    			$("#cover").css("display", "none");
-			      		window.location.href = "https://discountedtrade.herokuapp.com/";	
+			      		window.location.href = "https://discountedtrade.in/";	
 			      	}
 			      	else
 			      	{

@@ -498,7 +498,7 @@ function sendmail(email,name,res)
 	  to: email,
 	  subject: 'Verify email address',
 	  //html : '<a href="https://discountedtrade.herokuapp.com/confirmemail?email='+email+'" return false;>Click me</a>'
-	  html : '<div>Hi '+name+',</div><p> Thank you for Signing up. Please click the link below to verify your email address.</p><b><a href="https://discountedtrade.herokuapp.com/confirmemail?email='+email+'" return false;>Verification link</a></b>'
+	  html : '<div>Hi '+name+',</div><p> Thank you for Signing up. Please click the link below to verify your email address.</p><b><a href="https://discountedtrade.in/confirmemail?email='+email+'" return false;>Verification link</a></b>'
 	};	
 	
 	transporter.sendMail(mailOptions, function(error, info){

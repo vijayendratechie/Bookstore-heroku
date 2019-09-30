@@ -41,7 +41,7 @@ function buyingbookconfirmed(bookid)
 	$('body').css('overflow','hidden');	
 	$.ajax({
 	    type: "POST",
-	    url: "https://discountedtrade.herokuapp.com/buybook",
+	    url: "https://discountedtrade.in/buybook",
 	    data: {id : bookid},
 	    dataType: "text",
 	    success: function(info)
